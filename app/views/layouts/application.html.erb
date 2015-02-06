@@ -5,12 +5,13 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
 	<header class="header navbar-fixed-top">
 		<div class="container-fluid">
-			<ul class="nav nav-pills navbar-right">
+			<ul class="nav nav-pills">
 			  <li><a href="/most-popular">Most popular</a></li>
 			  <li><a href="/spend">By ticket price</a></li>
 			  <li><%= link_to("Add a show", new_show_path)%></li>
