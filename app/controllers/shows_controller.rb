@@ -10,6 +10,8 @@ class ShowsController < ApplicationController
 		rescue ActiveRecord::RecordNotFound
 			render 'no_show_found'
 		end
+		@comments = @show.comments.order(created_at: :asc)
+		@comment  = @show.comments.new
 	end
 
 	def new

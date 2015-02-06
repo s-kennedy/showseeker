@@ -24,9 +24,10 @@ class CommentsController < ApplicationController
 		@comment = @show.comments.new comment_params
 
 		if @comment.save
-			redirect_to '/'
+			redirect_to(show_path(@show.id))
 		else 
-			render 'new'
+			flash[:notice] = "Your comment was bad. Try again."
+			redirect_to(show_path(@show.id))
 		end
 	end
 

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get '/' => 'site#index' 
+  get '/spend' => 'site#spend'
 
   resources :shows do
     resources :comments do

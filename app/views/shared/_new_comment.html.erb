@@ -1,0 +1,32 @@
+<div class="container">
+	<div class="row">
+		<div class="comment_form">
+
+		<% if flash[:notice] %>
+			<%= flash[:notice] %>
+		<% end %>
+
+			<% if @comment.errors.any? %>
+				<ul>
+					<% @comment.errors.full_messages.each do |message| %>
+					<li><%=message%></li>
+					<%end%>
+				</ul>
+			<%end%>
+
+			<%= form_for [@show, @comment] do |f| %>
+
+				<%= f.label :name %>
+				<%= f.text_field :name %><br>
+
+				<%= f.label :email %>
+				<%= f.text_field :email %><br>
+
+				<%= f.label :comment %>
+				<%= f.text_field :comment %><br>
+
+				<%= f.submit 'Save' %>
+			<%end%>
+		</div>
+	</div>	
+</div>

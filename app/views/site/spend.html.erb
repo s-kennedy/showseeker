@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<h1>How much do you want to spend?</h1>
+
+
+
+				<div class="search">
+					<%= form_tag( '/spend', method: 'get') do |f| %>
+						<%= label_tag :budget %>
+						<%= text_field_tag :budget %>
+						<%= submit_tag "Search", id: "search" %>
+						
+					<%end%>
+				</div>	
+
+			
+				<ul class="list-unstyled"> <% @budget_shows.each do |event| %>
+					<li><%= event.band %></li>
+					<li><%= event.venue %>, <%= event.city %></li>
+					<li><%= event.price %> euros</li>
+					<%end%>
+				</ul>
+
+		</div>
+	</div>
+</div>

@@ -1,4 +1,5 @@
 <div class="container">
+
 	
 	<h1><%= @show.band%></h1>
 	<%= image_tag @show.pic.url(:large) %>
@@ -11,6 +12,11 @@
 
 	<%= link_to("edit", edit_show_path(@show)) %>
 
-	<%= @show.comments.first.comment %>
-	
+	<ul> <% @comments.each do |comment| %>
+		 <li><%= comment.name %>: "<%= comment.comment %>"</li>
+		<%end%>
+	</ul>
+
+	<%= render 'shared/new_comment'%>
+	<br><br>
 </div>

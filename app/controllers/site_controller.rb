@@ -6,4 +6,8 @@ class SiteController < ApplicationController
 		@upcoming_shows = Show.where("date > ?", Date.today ).order(date: :asc)
 	end
 
+	def spend
+		@budget_shows = Show.where("price <= ?", params[:budget]).order(date: :asc)
+	end
+
 end
