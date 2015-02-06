@@ -1,0 +1,7 @@
+	<div class="row">
+		<h2>What do you want to see?</h2>
+			<ul class="list-unstyled"><% @shows.each do |event| %>
+				<li><%= link_to(event.band, show_path(event.id))%> </li>
+				<% end %>
+			</ul> 
+	</div>

@@ -1,0 +1,14 @@
+<div class="container">
+	
+	<h1><%= @show.band%></h1>
+	<%= image_tag @show.pic.url(:large) %>
+		<ul class="list-unstyled">
+			<li><%= @show.description%></li>
+			<li><%= @show.venue%>, <%= @show.city%></li>
+			<li><%= @show.date%></li>
+			<li><%= @show.price%> euros</li>
+		</ul>
+
+	<%= link_to("edit", edit_show_path(@show)) %>
+	
+</div>

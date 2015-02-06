@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ShowSeeker</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<header class="header navbar-fixed-top">
+		<div class="container">
+			<p class="text-muted">the absolute best resource for awesome shows, both real and not.</p>
+		</div>
+	</header>
+
+<%= yield %>
+
+
+	<footer class="footer navbar-fixed-bottom">
+		<div class="container">
+			<p class="text-muted">boo</p>
+		</div>
+	</footer>
+
+</body>
+</html>

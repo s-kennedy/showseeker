@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<h1>What are you doing tonight?</h1>
+				<ul class="list-unstyled">
+					<li><%= @show_today.band %></li>
+					<%= image_tag @show_today.pic.url(:large) %>
+					<li><%= @show_today.venue %>, <%= @show_today.city %></li>
+					<li><%= @show_today.price %> euros</li>
+				</ul>
+		</div>
+		<%= render 'shared/upcoming' %>
+	</div>
+
+	
+
+
+
+</div>
