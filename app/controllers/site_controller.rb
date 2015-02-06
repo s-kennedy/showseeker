@@ -10,4 +10,8 @@ class SiteController < ApplicationController
 		@budget_shows = Show.where("price <= ?", params[:budget]).order(date: :asc)
 	end
 
-end
+	def top
+		@top = Show.where("date > ?", Date.today ).order(commentcount: :desc).limit(10)
+	end
+
+ end

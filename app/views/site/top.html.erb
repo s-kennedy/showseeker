@@ -1,0 +1,14 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<h1>Most Popular Concerts</h1>
+				<ul class="list-unstyled"> <% @top.each do |event| %>
+					<li><strong><%= event.band %></strong></li>
+					<li><%= event.venue %>, <%= event.city %></li>
+					<li><%= event.comments.count%> comments </li>
+					<%end%>
+				</ul>
+
+		</div>
+	</div>
+</div>

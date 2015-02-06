@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get '/' => 'site#index' 
   get '/spend' => 'site#spend'
+  get '/most-popular' => 'site#top'
 
   resources :shows do
     resources :comments do

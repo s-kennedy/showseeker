@@ -9,8 +9,12 @@
 <body>
 
 	<header class="header navbar-fixed-top">
-		<div class="container">
-			<p class="text-muted">the absolute best resource for awesome shows, both real and not.</p>
+		<div class="container-fluid">
+			<ul class="nav nav-pills navbar-right">
+			  <li><a href="/most-popular">Most popular</a></li>
+			  <li><a href="/spend">By ticket price</a></li>
+			  <li><%= link_to("Add a show", new_show_path)%></li>
+			</ul>
 		</div>
 	</header>
 
@@ -19,9 +23,10 @@
 
 	<footer class="footer navbar-fixed-bottom">
 		<div class="container">
-			<p class="text-muted">boo</p>
+			<p class="text-muted">the absolute best resource for awesome shows, both real and not</p>
 		</div>
 	</footer>
 
 </body>
 </html>
+
