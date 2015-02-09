@@ -1,16 +1,36 @@
 <div class="container">
 	<div class="row">
-		<h1>SHOWSEEKER</h1>
 		<div class="col-md-8">
-			<h2>What are you doing tonight?</h2>
-				<ul class="list-unstyled">
-					<li><%= @show_today.band %></li>
-					<%= image_tag @show_today.pic.url(:large) %>
-					<li><%= @show_today.venue %>, <%= @show_today.city %></li>
-					<li><%= @show_today.price %> euros</li>
-				</ul>
+			<div class="home">
+				<h1>
+				<% if @next_show.date == Date.today %>
+					<%= link_to("TONIGHT", show_path(@next_show))%>
+				<% else %>
+					<%= link_to("NEXT SHOW", show_path(@next_show))%>
+				<% end %>
+				</h1>
+
+					<ul class="list-unstyled today-show">
+						<li class="band"><%= @next_show.band %></li>
+						<li class="place"><%= @next_show.venue %>, <%= @next_show.city %></li>
+						<li class="price"><%= @next_show.price %> euros</li>
+					</ul>
+			</div>
 		</div>
-		<%= render 'shared/upcoming' %>
+
+		<div class="col-md-4">
+			<div class="upcoming">
+
+				<h2>Coming soon... </h2>
+					<ul class="list-unstyled"><% @upcoming_shows.each do |event| %>
+						<li><strong><%=event.date.to_s(:short)%></strong> - <%= link_to(event.band, show_path(event.id))%> </li>
+						<% end %>
+					</ul> 
+				
+			</div>	
+		</div>
+
+
 	</div>
 </div>
 

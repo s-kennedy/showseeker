@@ -12,6 +12,7 @@
 	<header class="header navbar-fixed-top">
 		<div class="container-fluid">
 			<ul class="nav nav-pills">
+			  <li><a href="/">Home</a></li>
 			  <li><a href="/most-popular">Most popular</a></li>
 			  <li><a href="/spend">By ticket price</a></li>
 			  <li><%= link_to("Add a show", new_show_path)%></li>
@@ -19,7 +20,12 @@
 		</div>
 	</header>
 
+<div class="main">
+
 <%= yield %>
+	
+</div>
+
 
 
 	<footer class="footer navbar-fixed-bottom">

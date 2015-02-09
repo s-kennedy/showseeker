@@ -2,7 +2,12 @@ class SiteController < ApplicationController
 
 	def index
 		@shows = Show.all
-		@show_today = Show.where("date = ?", Date.today).limit(1).first
+		@next_show = Show.where("date >= ?", Date.today).order(date: :asc).limit(1).first
+		# if Show.where("date = ?", Date.today).present?
+		# 	@show_today = Show.where("date = ?", Date.today).limit(1).first
+		# else 
+		# 	render 'shared/upcoming'
+		# end
 		@upcoming_shows = Show.where("date > ?", Date.today ).order(date: :asc)
 	end
 

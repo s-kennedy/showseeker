@@ -1,22 +1,32 @@
 <div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			
+		
+			<div class="show__listing">	
+				<h1><%= @show.band%></h1>
+					<ul class="list-unstyled">
+						<li><span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span><%= @show.description%></li>
+						<li><%= image_tag @show.pic.url(:large) %></li>
+						<li><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span><%= @show.venue%>, <%= @show.city%></li>
+						<li><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><%= @show.date.to_s :short %></li>
+						<li><span class="glyphicon glyphicon-euro" aria-hidden="true"></span><%= @show.price%> euros</li>
+					</ul>
 
-	
-	<h1><%= @show.band%></h1>
-	<%= image_tag @show.pic.url(:large) %>
-		<ul class="list-unstyled">
-			<li><%= @show.description%></li>
-			<li><%= @show.venue%>, <%= @show.city%></li>
-			<li><%= @show.date%></li>
-			<li><%= @show.price%> euros</li>
-		</ul>
+					<%= link_to("edit", edit_show_path(@show), class: "show__edit")%>
 
-	<%= link_to("edit", edit_show_path(@show)) %>
+			</div>
 
-	<ul> <% @comments.each do |comment| %>
-		 <li><%= comment.name %>: "<%= comment.comment %>"</li>
-		<%end%>
-	</ul>
+			<div class="show__comment">
+				<ul class = "list-unstyled"> <% @comments.each do |comment| %>
+					 <li><strong> "<%= comment.comment %>"</strong> -- <%= comment.name %></li>	
+					<%end%>
+				</ul>
+			</div>
 
-	<%= render 'shared/new_comment'%>
-	<br><br>
+			<%= render 'shared/new_comment'%>
+			<br><br>
+
+		</div>
+	</div>
 </div>

@@ -1,12 +1,13 @@
 
 <div class="col-md-4">
-	
+	<div class-"upcoming">
 
-<h2>Start making plans</h2>
-	<ul class="list-unstyled"><% @upcoming_shows.each do |event| %>
-		<li><strong><%=event.date.to_s(:short)%></strong> - <%= link_to(event.band, show_path(event.id))%> </li>
-		<% end %>
-	</ul> 
-	
+		<h2>Start making plans</h2>
+			<ul class="list-unstyled"><% @upcoming_shows.each do |event| %>
+				<li><strong><%=event.date.to_s(:short)%></strong> - <%= link_to(event.band, show_path(event.id))%> </li>
+				<% end %>
+			</ul> 
+		
+	</div>	
 </div>
 

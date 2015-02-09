@@ -1,32 +1,33 @@
-<div class="container">
-	<div class="row">
-		<div class="comment_form">
+<div class="comment_form">
 
-		<% if flash[:notice] %>
-			<%= flash[:notice] %>
-		<% end %>
+<% if flash[:notice] %>
+	<%= flash[:notice] %>
+<% end %>
 
-			<% if @comment.errors.any? %>
-				<ul>
-					<% @comment.errors.full_messages.each do |message| %>
-					<li><%=message%></li>
-					<%end%>
-				</ul>
+	<% if @comment.errors.any? %>
+		<ul>
+			<% @comment.errors.full_messages.each do |message| %>
+			<li><%=message%></li>
 			<%end%>
+		</ul>
+	<%end%>
 
+	<h2>Add your comment</h2>
+		<div class= "comment_form_inputs">
 			<%= form_for [@show, @comment] do |f| %>
 
 				<%= f.label :name %>
-				<%= f.text_field :name %><br>
+				<%= f.text_field :name %>
 
 				<%= f.label :email %>
 				<%= f.text_field :email %><br>
 
-				<%= f.label :comment %>
-				<%= f.text_field :comment %><br>
+				<%= f.label :comment %><br>
+				<%= f.text_area :comment, size: "60x2" %><br>
 
-				<%= f.submit 'Save' %>
+				<%= f.submit 'Save', id: "save-button" %>
 			<%end%>
 		</div>
-	</div>	
 </div>
+
+

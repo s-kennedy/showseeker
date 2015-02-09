@@ -1,0 +1,8 @@
+<div class="next_show">
+				<h1><%= link_to("NEXT SHOW", show_path(@next_show))%></h1>
+					<ul class="list-unstyled today-show">
+						<li class="band"><%= @next_show.band %></li>
+						<li class="place"><%= @next_show.venue %>, <%= @next_show.city %></li>
+						<li class="price"><%= @next_show.price %> euros</li>
+					</ul>
+			</div>
